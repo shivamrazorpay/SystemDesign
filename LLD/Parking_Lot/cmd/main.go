@@ -8,8 +8,10 @@ import (
 func main() {
 	pl := internal.NewParkingLot("MyParkingLot", 10, 1)
 	parkingTicket, err := pl.ParkVehicle(internal.Vehicle{
-		VehicleNumber: "KA01AB1234",
-		VehicleType:   internal.Car,
+		VehicleNumber:  "KA01AB1234",
+		VehicleType:    internal.Car,
+		VehicleSubType: internal.SUV,
+		PhoneNumber:    "9876543210",
 	})
 	if err != nil {
 		panic(err)

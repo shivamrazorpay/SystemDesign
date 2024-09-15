@@ -27,6 +27,14 @@ func NewParkingLot(name string, totalslots int, levels int) *ParkingLot {
 }
 
 func (pl *ParkingLot) ParkVehicle(vehicle Vehicle) (string, error) {
+
+	// Validate Vehicle
+	err := vehicle.Validate()
+	if err != nil {
+		return "", err
+	}
+
+	// Allot Slot
 	for i := range pl.Slots {
 		if pl.Slots[i].IsAvailable {
 			pl.Slots[i].IsAvailable = false
@@ -41,10 +49,10 @@ func (pl *ParkingLot) ParkVehicle(vehicle Vehicle) (string, error) {
 func (pl *ParkingLot) UnparkVehicle(vehicleNumber string) error {
 	for _, slot := range pl.Slots {
 		if slot.Vehicle.VehicleNumber == vehicleNumber {
-			slot.IsAvailable = true
-			slot.Vehicle = Vehicle{}
 			charge := pl.CalculateParkingCharges(slot)
 			fmt.Printf("Parking charges for vehicle %s is %f\n", vehicleNumber, charge)
+			slot.IsAvailable = true
+			slot.Vehicle = Vehicle{}
 			return nil
 		}
 	}

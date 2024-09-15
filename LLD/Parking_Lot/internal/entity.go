@@ -11,21 +11,20 @@ type ParkingLot struct {
 }
 
 type ParkingSlot struct {
-	Id          int         `json:"id"`
-	SlotNumber  int         `json:"slot_number"`
-	Level       int         `json:"level"`
-	IsAvailable bool        `json:"is_available"`
-	Vehicle     Vehicle     `json:"vehicle"`
-	Type        VehicleType `json:"type"`
-	EntryTime   time.Time   `json:"entry_time"`
+	Id          int       `json:"id"`
+	SlotNumber  int       `json:"slot_number"`
+	Level       int       `json:"level"`
+	IsAvailable bool      `json:"is_available"`
+	Vehicle     Vehicle   `json:"vehicle"`
+	EntryTime   time.Time `json:"entry_time"`
 }
 
 type Vehicle struct {
-	Id             int         `json:"id"`
-	VehicleType    VehicleType `json:"vehicle_type"`
-	VehicleSubType int         `json:"vehicle_sub_type"`
-	VehicleNumber  string      `json:"vehicle_number"`
-	PhoneNumber    string      `json:"phone_number"`
+	Id             int            `json:"id"`
+	VehicleType    VehicleType    `json:"vehicle_type"`
+	VehicleSubType VehicleSubType `json:"vehicle_sub_type"`
+	VehicleNumber  string         `json:"vehicle_number"`
+	PhoneNumber    string         `json:"phone_number"`
 }
 
 // VehicleCar struct which is of type vehicle

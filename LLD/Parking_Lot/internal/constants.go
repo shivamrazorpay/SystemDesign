@@ -1,16 +1,28 @@
 package internal
 
 type VehicleType int
+type VehicleSubType int
 
 const (
-	Car VehicleType = iota
+	InvalidVehicle VehicleType = iota
+	Car
 	Bike
 	Auto
 )
 
-type CarSubType int
-
 const (
-	SUV CarSubType = iota
+	InvalidSubType VehicleSubType = iota
+	// Car subtypes
+	SUV
 	Sedan
+	Hatchback
+
+	// Bike subtypes
+	SportsBike
+	Cruiser
+	Scooter
+
+	// Auto subtypes
+	PassengerAuto
+	GoodsAuto
 )
