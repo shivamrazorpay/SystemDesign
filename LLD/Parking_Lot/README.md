@@ -31,3 +31,11 @@ How would you ensure that the parking lot does not allow more vehicles than its 
 How would you implement the pricing logic in a scalable way, considering future changes or additions to pricing models?
 What data structures would you use to keep track of available parking spots, vehicles, and their entry/exit times?
 How would you handle the situation where a vehicle is attempting to enter but no spots are available for its type?
+
+## TODOs
+1. Add Unit Test cases for Parking and Unparking Functions.
+2. Add Viper Configuration for the Parking Lot System to make it configurable based on different environments.
+3. Add a mechanism to reserve parking spots.
+4. Add REST API to interact with the Parking Lot System (using GIN or Echo).
+5. Add a mechanism to support electric vehicle (EV) charging stations.
+6. Expose an endpoint to get the current availability of parking spots (how many are available for each vehicle type).
