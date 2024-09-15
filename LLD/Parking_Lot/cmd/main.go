@@ -2,6 +2,7 @@ package main
 
 import (
 	"Parking_Lot/internal"
+	"fmt"
 	"time"
 )
 
@@ -17,10 +18,13 @@ func main() {
 		panic(err)
 	}
 
+	fmt.Println("Vehicle parked successfully")
+	fmt.Println("Parking Ticket: ", parkingTicket)
+
 	// Simulating parking for 5 seconds
 	time.Sleep(5 * time.Second)
 
-	err = pl.UnparkVehicle(parkingTicket)
+	err = pl.UnparkVehicle(parkingTicket.Vehicle.VehicleNumber)
 	if err != nil {
 		panic(err)
 	}

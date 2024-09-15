@@ -27,6 +27,11 @@ type Vehicle struct {
 	PhoneNumber    string         `json:"phone_number"`
 }
 
+type ParkingTicket struct {
+	Vehicle     Vehicle     `json:"vehicle"`
+	ParkingSlot ParkingSlot `json:"parking_slot"`
+}
+
 // VehicleCar struct which is of type vehicle
 type VehicleCar struct {
 	Vehicle
